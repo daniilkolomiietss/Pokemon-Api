@@ -10,7 +10,7 @@
         {
             get; set
             {
-                if (value < 0 && value > 10)
+                if (value < 0 || value > 10)
                     throw new ArgumentOutOfRangeException(nameof(HappinessLevel), "Happiness level cannot be negative or bigger than 10");
                 field = value;
             }
