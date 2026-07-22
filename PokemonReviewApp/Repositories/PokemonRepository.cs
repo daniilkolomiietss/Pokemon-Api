@@ -2,7 +2,7 @@
 using PokemonReviewApp.Models;
 using PokemonReviewApp.Interfaces;
 
-namespace PokemonReviewApp.Repository
+namespace PokemonReviewApp.Repositories
 {
     public class PokemonRepository : IPokemonRepository
     {

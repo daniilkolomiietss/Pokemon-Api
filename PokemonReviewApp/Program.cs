@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using PokemonReviewApp.Data;
 using PokemonReviewApp;
 using PokemonReviewApp.Interfaces;
-using PokemonReviewApp.Repository;
+using PokemonReviewApp.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddTransient<Seed>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IPokemonRepository, PokemonRepository>();
+builder.Services.AddScoped<ICountryRepository, CountryRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+//ilder.Services.AddScoped<IOwnerRepository, OwnerRepository>();
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDataContext>(options =>
