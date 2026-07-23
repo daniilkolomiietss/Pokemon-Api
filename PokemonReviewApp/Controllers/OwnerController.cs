@@ -62,4 +62,5 @@ namespace PokemonReviewApp.Controllers
                 return BadRequest(ModelState);
             return Ok(pokemons);
         }
+    }
 }
