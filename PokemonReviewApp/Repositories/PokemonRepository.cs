@@ -7,9 +7,8 @@ namespace PokemonReviewApp.Repositories
     public class PokemonRepository : IPokemonRepository
     {
         private readonly AppDataContext _context;
+
         public PokemonRepository(AppDataContext context) => _context = context;
-
-
         public ICollection<Pokemon> GetPokemons() => _context.Pokemons.OrderBy(p => p.Id).ToList();
         public Pokemon GetPokemon(int id) => _context.Pokemons.FirstOrDefault(p => p.Id == id);
         public Pokemon GetPokemon(string name) => _context.Pokemons.FirstOrDefault(p => p.Name == name);
